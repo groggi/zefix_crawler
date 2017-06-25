@@ -6,7 +6,6 @@ import time
 import random
 import pickle
 
-
 ENTRY_STEP = 500
 
 
@@ -31,6 +30,7 @@ def get_companies(search: str, session: requests.Session):
         has_more = bool(json_result['hasMoreResults'])
         offset += ENTRY_STEP
     return results
+
 
 # TODO: add digits, punctuations and so on. Needs some checking...
 search_strings = [''.join(k) for k in itertools.product(string.ascii_lowercase, repeat=3)]
